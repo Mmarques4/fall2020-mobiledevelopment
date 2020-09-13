@@ -4,7 +4,7 @@ import Component from './Component.js';
 // Article is a child object of Component
 class Article extends Component {
 
-  super (props) {
+  constructor (props) {
     // Send what it gets to its parent object
   }
 
@@ -13,9 +13,9 @@ class Article extends Component {
     // Use template literals for the variables
     return (`
       <Article>
-        <Title>`+this.props.title+`</Title>
-        <Author>`+this.props.author+`</Author>
-        <Text>`+this.props.text+`</Text>
+        <Title>this.props.title</Title>
+        <Author>this.props.author</Author>
+        <Text>this.props.text</Text>
       </Article>
     `
     );
