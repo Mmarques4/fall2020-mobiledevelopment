@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 
 import StepsCounter from './components/StepsCounter';
+import ClientTracker from './components/ClientTracker';
 
 function App() {
   return (
@@ -10,9 +11,10 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          <h2> <u>Friendly Counter</u> </h2>
+          <h2> <u>User-Friendly Tracker</u> </h2>
         </p>
         <StepsCounter/>
+        <ClientTracker/>
       </header>
     </div>
   );

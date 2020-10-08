@@ -13,7 +13,7 @@ export default class StepsCounter extends React.Component {
     render () {
         return (
             <div class="tracker">
-                <h2> Steps Counter </h2>
+                <h2> Step Counter </h2>
                 <p>Steps: {this.state.steps}</p>
                 <button onClick ={() => {
                     this.setState({steps: this.state.steps + 1}); 
