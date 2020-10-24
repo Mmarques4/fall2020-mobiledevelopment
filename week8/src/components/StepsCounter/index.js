@@ -12,15 +12,20 @@ export default class StepsCounter extends React.Component {
 
     render () {
         return (
-            <div class="tracker">
-                <h2> Step Counter </h2>
-                <p>Steps: {this.state.steps}</p>
-                <button onClick ={() => {
-                    this.setState({steps: this.state.steps + 1}); 
-                }}> Increase </button>
-                <button onClick ={() => {
-                    this.setState({steps: 0});
-                }}> Reset</button>
+            <div id ="panel">
+                <div class="tracker">
+                    <h2> Step Counter </h2>
+                    <p>Steps: {this.state.steps}</p>
+                    <button class id="button" onClick ={() => {
+                        this.setState({steps: this.state.steps + 1}); 
+                    }}> Increase </button>
+                    <button class id="button" onClick ={() => {
+                        this.setState({steps: this.state.steps - 1}); 
+                    }}> Decrease </button>
+                    <button class id="reset" onClick ={() => {
+                        this.setState({steps: 0});
+                    }}> Reset</button>
+                </div> 
             </div>
         );
     }
