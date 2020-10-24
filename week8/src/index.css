@@ -14,6 +14,8 @@ code {
   font-size: 32px;
   background-color: #74a4e2;
   color: rgb(3, 3, 3);
+  border-style: dashed;
+  border-color: white;
 }
 
 .button{
@@ -63,4 +65,17 @@ code {
   color: rgb(12, 12, 12);
   border: solid 3px #faf9f9;
   margin: auto;
+}
+
+#lblGreetings{
+  color: rgb(210, 153, 248);
+  font-style: italic;
+  font-size: larger;
+}
+
+#clock {
+  color: rgb(210, 153, 248);
+  font-style: italic;
+  font-size: 24px;
+  font-weight: bold;
 }
