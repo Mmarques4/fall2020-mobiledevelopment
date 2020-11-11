@@ -1,0 +1,12 @@
+{
+  "name": "week12",
+  "displayName": "week12",
+  "expo": {
+    "name": "week12",
+    "slug": "week12",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
