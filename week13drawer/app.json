@@ -1,0 +1,12 @@
+{
+  "name": "week13drawer",
+  "displayName": "week13drawer",
+  "expo": {
+    "name": "week13drawer",
+    "slug": "week13drawer",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
