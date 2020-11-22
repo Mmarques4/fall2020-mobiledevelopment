@@ -22,10 +22,10 @@ function HomeScreen(props) {
   );
 }
 
-function Exercise1Screen(props) {
+function FirstExerciseScreen(props) {
   return (
     <View>
-      <Text >Customer Counter</Text>
+      <Text><h2>Customer Counter</h2></Text>
       <ButtonExample />
       <Button
         title="Back to Home"
@@ -38,10 +38,10 @@ function Exercise1Screen(props) {
     </View>
   );
 }
-function Exercise2Screen(props) {
+function SecondExerciseScreen(props) {
   return (
     <View>
-      <Text>Step Counter</Text>
+      <Text> <h2>Step Counter</h2></Text>
       <ButtonExample />
       <Button
         title="Back to Home"
@@ -63,8 +63,8 @@ function Home() {
     <NavigationContainer>
       <Drawer.Navigator>
         <Drawer.Screen name="Home" component={HomeScreen} />
-        <Drawer.Screen name="People" component={Exercise1Screen} />
-        <Drawer.Screen name="Step" component={Exercise2Screen} />
+        <Drawer.Screen name="People" component={FirstExerciseScreen} />
+        <Drawer.Screen name="Step" component={SecondExerciseScreen} />
         </Drawer.Navigator>
     </NavigationContainer>
   );

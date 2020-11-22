@@ -1,21 +1,73 @@
-import { StatusBar } from 'expo-status-bar';
+import 'react-native-gesture-handler';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Text, View } from 'react-native';
+import { Button } from 'react-native-elements';
+import { NavigationContainer } from '@react-navigation/native';
+import { createDrawerNavigator } from '@react-navigation/stack';
+import ButtonExample from './component/Trackers';
 
-export default function App() {
+function HomeScreen(props) {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+    <View>
+      <Text> <h1><center>HOME</center></h1></Text>
+      <Button
+        title="Customer Counter"
+        onPress={() => props.navigation.navigate('People')}
+      />
+       <Button
+        title="Step Counter"
+        onPress={() => props.navigation.navigate('Step')}
+      />
     </View>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+function FirstExerciseScreen(props) {
+  return (
+    <View>
+      <Text><h2>Customer Counter</h2></Text>
+      <ButtonExample />
+      <Button
+        title="Back to Home"
+        onPress={() => props.navigation.navigate('Home')}
+      />
+       <Button
+        title="Step Counter"
+        onPress={() => props.navigation.navigate('Step')}
+      />
+    </View>
+  );
+}
+function SecondExerciseScreen(props) {
+  return (
+    <View>
+      <Text> <h2>Step Counter</h2></Text>
+      <ButtonExample />
+      <Button
+        title="Back to Home"
+        onPress={() => props.navigation.navigate('Home')}
+      />
+       <Button
+        title="Customer Counter"
+        onPress={() => props.navigation.navigate('People')}
+      />
+    </View>
+  );
+}
+
+
+const Drawer = createDrawerNavigator();
+
+function Home() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="People" component={FirstExerciseScreen} />
+        <Stack.Screen name="Step" component={SecondExerciseScreen} />
+        </Stack.Navigator>
+    </NavigationContainer>
+  );
+}
+
+export default Home;
