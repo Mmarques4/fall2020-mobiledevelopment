@@ -3,7 +3,7 @@ import React from 'react';
 import { Text, View } from 'react-native';
 import { Button } from 'react-native-elements';
 import { NavigationContainer } from '@react-navigation/native';
-import { createDrawerNavigator } from '@react-navigation/stack';
+import { createStackNavigator } from '@react-navigation/stack';
 import ButtonExample from './component/Trackers';
 
 function HomeScreen(props) {
@@ -56,7 +56,7 @@ function SecondExerciseScreen(props) {
 }
 
 
-const Drawer = createDrawerNavigator();
+const Stack = createStackNavigator();
 
 function Home() {
   return (
