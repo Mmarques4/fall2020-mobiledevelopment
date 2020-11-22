@@ -11,7 +11,7 @@ export default function Trackers() {
 
   return (
     <View>
-      <Text><b>Count:{counter} </b></Text>
+      <Text><b>Count:{counter} </b></Text> <br></br>
 
       <View>
         <Button title="Increase" 
