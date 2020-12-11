@@ -1,4 +1,5 @@
 import React, { useReducer, useRef } from 'react';
+import { StyleSheet, Text, View } from 'react-native';
 
 let initialState = {
 
@@ -23,7 +24,7 @@ function Reducer (state, action) {
     //remove toppins
     case "REMOVE_TOPPINGS":
       return {
-       
+        
         ...state,
         toppingsPrice: state.toppingsPrice - action.item.price,
         food: 
@@ -45,6 +46,7 @@ function Reducer (state, action) {
       
     default:
       return state;
+      
   }
 }
 
@@ -61,7 +63,7 @@ const App = () => {
   }
   
   <input ref={inputRef} />
-
+  
   return (
       <div className="combo">
         <h2>{state.food.name}</h2>
@@ -116,3 +118,35 @@ const App = () => {
 }
 
 export default App;
+
+const styles = StyleSheet.create({
+  
+  headerText: {
+    fontSize: 20,
+    fontWeight: "bold",
+    textAlign: "center",
+    margin: 20,
+  },
+  headerText1: {
+    fontSize: 40,
+    fontWeight: "bold",
+    textAlign: "center",
+    margin: 20,
+    color: 'black',
+    fontFamily: 'cambria',
+  },
+
+  buttonContainer: {
+    backgroundColor: '#E2E3FB',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+
+  button: {
+    backgroundColor: 'black',
+    borderColor: '#A950FC',
+    borderWidth: 4,
+    width: 100,
+    height: 80, 
+ },
+});

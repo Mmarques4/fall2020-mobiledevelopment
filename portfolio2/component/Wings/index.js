@@ -2,14 +2,14 @@ import React, { useReducer, useRef } from 'react';
 
 let initialState = {
 
-  toppingsPrice: 0,
+  saucePrice: 0,
 
   food: {
     name: "Wings of your Choice",
     price: 15,
     topping: []
   },
-  //you can add toppings
+  //you can add sauce
   store: [
     { id: 1, name: "Barbecue", price: 4 },
     { id: 2, name: "Parmesan Garlic Sauce", price: 2 },
@@ -21,22 +21,22 @@ let initialState = {
 function Reducer (state, action) {
   switch (action.type) {
     //remove toppins
-    case "REMOVE_TOPPINGS":
+    case "REMOVE_SAUCE":
       return {
        
         ...state,
-        toppingsPrice: state.toppingsPrice - action.item.price,
+        saucePrice: state.saucePrice - action.item.price,
         food: 
         { ...state.food, topping: state.food.topping.filter((x) => x.id !== action.item.id)},
         store:
         [...state.store, action.item]
       };
  
-    case "ADD_TOPPINGS":
+    case "ADD_SAUCE":
       return {
       
         ...state,
-        toppingsPrice: state.toppingsPrice + action.item.price,
+        saucePrice: state.saucePrice + action.item.price,
         food: 
         { ...state.food, topping: [...state.food.topping, action.item] },
         store: 
@@ -53,11 +53,11 @@ const App = () => {
   const [state, dispatch] = useReducer(Reducer, initialState);
   
   const removeToppings = (item) => {
-    dispatch({ type: 'REMOVE_TOPPINGS', item });
+    dispatch({ type: 'REMOVE_SAUCE', item });
   }
   
-  const addtoppings = (item) => {
-    dispatch({ type: 'ADD_TOPPINGS', item })
+  const addsauce = (item) => {
+    dispatch({ type: 'ADD_SAUCE', item })
   }
   
   <input ref={inputRef} />
@@ -96,7 +96,7 @@ const App = () => {
                 <li key={item.id}>
                   {item.name} (+ ${item.price})
                   <button
-                    onClick={() => addtoppings(item)}
+                    onClick={() => addsauce(item)}
                     className="button"> Add </button>
                 </li>
               ))}
@@ -107,7 +107,7 @@ const App = () => {
 
         <div className="content">
         <h2>
-          Total Order Amount: $ {state.food.price + state.toppingsPrice}
+          Total Order Amount: $ {state.food.price + state.saucePrice}
         </h2>
       </div>
       </div>

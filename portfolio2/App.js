@@ -1,6 +1,6 @@
 import 'react-native-gesture-handler';
 import React from 'react';
-import { Text, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 import { Button } from 'react-native-elements';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -11,34 +11,43 @@ import ButtonExample4 from './component/Fries';
 import ButtonExample5 from './component/Beverage';
 import ButtonExample6 from './component/Salads';
 
+
 function HomeScreen(props) {
   return (
-    <View>
-      <Text> <h1><center> Welcome to Maggie's Pizza</center></h1></Text>
+    <View style={{backgroundColor: '#E2E3FB', flex:1}}>
+      <Text style={styles.headerText1}> Welcome to Maggie's Pizza</Text>
+      <View style={styles.buttonContainer}>
+        <Button
+        buttonStyle={styles.button}
+          title="Pizza"
+          onPress={() => props.navigation.navigate('Pizza')}
+        />  &nbsp;&nbsp;&nbsp;
+        <Button
+         buttonStyle={styles.button}
+          title="Wings"
+          onPress={() => props.navigation.navigate('Wings')}
+        /> &nbsp;&nbsp;&nbsp;
+        <Button
+         buttonStyle={styles.button}
+        title="Calzone"
+        onPress={() => props.navigation.navigate('Calzones')}
+      /> &nbsp;&nbsp;&nbsp;
       <Button
-        title="Pizza"
-        onPress={() => props.navigation.navigate('Pizza')}
-      />
-       <Button
-        title="Wings"
-        onPress={() => props.navigation.navigate('Wings')}
-      />
+       buttonStyle={styles.button}
+        title="Salads"
+        onPress={() => props.navigation.navigate('Salads')}
+      /> &nbsp;&nbsp;&nbsp;
       <Button
-      title="Calzone"
-      onPress={() => props.navigation.navigate('Calzones')}
-    />
-    <Button
-      title="Salads"
-      onPress={() => props.navigation.navigate('Salads')}
-    />
-    <Button
-      title="Fries"
-      onPress={() => props.navigation.navigate('Fries')}
-    />
-    <Button
-      title="Beverages"
-      onPress={() => props.navigation.navigate('Beverage')}
-    />
+       buttonStyle={styles.button}
+        title="Fries"
+        onPress={() => props.navigation.navigate('Fries')}
+      /> &nbsp;&nbsp;&nbsp;
+      <Button
+       buttonStyle={styles.button}
+        title="Beverages"
+        onPress={() => props.navigation.navigate('Beverage')}
+      />
+      </View>
     </View>
     
   );
@@ -46,24 +55,28 @@ function HomeScreen(props) {
 
 function PizzaScreen(props) {
   return (
-    <View>
-      <Text><h2>Cuztomize your Pizza</h2></Text>
-      <ButtonExample />
+    <View style={{backgroundColor: '#E2E3FB', flex:1}}>
+    <Text style={styles.headerText}>Customize your Pizza</Text>
+      <ButtonExample/>
       <Button
+        buttonStyle={styles.button}
         title="Back to Home"
         onPress={() => props.navigation.navigate('Home')}
+        
       />
     </View>
   );
 }
 function WingScreen(props) {
   return (
-    <View>
-      <Text> <h2>Cuztomize your Wings</h2></Text>
+    <View style={{backgroundColor: '#E2E3FB', flex:1}}>
+      <Text style={styles.headerText}>Customize your Wings</Text>
       <ButtonExample2/>
       <Button
+        buttonStyle={styles.button}
         title="Back to Home"
         onPress={() => props.navigation.navigate('Home')}
+        style={styles.buttonStyle}
       />
     </View>
   );
@@ -71,12 +84,14 @@ function WingScreen(props) {
 
 function CalzoneScreen(props) {
   return (
-    <View>
-      <Text> <h2>Cuztomize your Calzones</h2></Text>
+    <View style={{backgroundColor: '#E2E3FB', flex:1}}>
+      <Text style={styles.headerText}>Customize your Calzones</Text>
       <ButtonExample3 />
       <Button
+       buttonStyle={styles.button}
         title="Back to Home"
         onPress={() => props.navigation.navigate('Home')}
+        style={styles.buttonStyle}
       />
     </View>
   );
@@ -84,12 +99,14 @@ function CalzoneScreen(props) {
 
 function PotatoScreen(props) {
   return (
-    <View>
-      <Text> <h2>Cuztomize your Fries</h2></Text>
+    <View style={{backgroundColor: '#E2E3FB', flex:1}}>
+      <Text style={styles.headerText}>Customize your Fries</Text>
       <ButtonExample4 />
       <Button
+       buttonStyle={styles.button}
         title="Back to Home"
         onPress={() => props.navigation.navigate('Home')}
+        style={styles.buttonStyle}
       />
     </View>
   );
@@ -97,12 +114,14 @@ function PotatoScreen(props) {
 
 function BeverageScreen(props) {
   return (
-    <View>
-      <Text> <h2>Select your Beverage. </h2></Text>
+    <View style={{backgroundColor: '#E2E3FB', flex:1}}>
+      <Text style={styles.headerText}>Select your Beverage.</Text>
       <ButtonExample5 />
       <Button
+       buttonStyle={styles.button}
         title="Back to Home"
         onPress={() => props.navigation.navigate('Home')}
+        style={styles.buttonStyle}
       />
     </View>
   );
@@ -110,12 +129,14 @@ function BeverageScreen(props) {
 
 function SaladScreen(props) {
   return (
-    <View>
-      <Text> <h2>Select your favorite Salad! </h2></Text>
+    <View style={{backgroundColor: '#E2E3FB', flex:1}}>
+      <Text style={styles.headerText}>Select your favorite Salad! </Text>
       <ButtonExample6 />
       <Button
+        buttonStyle={styles.button}
         title="Back to Home"
         onPress={() => props.navigation.navigate('Home')}
+        style={styles.buttonStyle}
       />
     </View>
   );
@@ -141,3 +162,34 @@ function Home() {
 }
 
 export default Home;
+
+const styles = StyleSheet.create({
+  
+  headerText: {
+    fontSize: 30,
+    fontWeight: "bold",
+    fontFamily: 'cambria',
+  },
+  headerText1: {
+    fontSize: 40,
+    fontWeight: "bold",
+    textAlign: "center",
+    margin: 20,
+    color: 'black',
+    fontFamily: 'cambria',
+  },
+
+  buttonContainer: {
+    backgroundColor: '#E2E3FB',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+
+  button: {
+    backgroundColor: 'black',
+    borderColor: '#A950FC',
+    borderWidth: 4,
+    width: 100,
+    height: 80, 
+ },
+});
